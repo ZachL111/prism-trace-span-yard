@@ -1,0 +1,73 @@
+{
+  "repo": "prism-trace-span-yard",
+  "language": "Scala",
+  "category": "Observability",
+  "goal": "Package a Scala local lab for span analysis with windowed input fixtures, late-data behavior checks, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "span volume",
+      "latency skew",
+      "signal loss",
+      "incident shape"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "span volume",
+      "signal": 42,
+      "slack": 37,
+      "drag": 8,
+      "confidence": 87,
+      "score": 184,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "latency skew",
+      "signal": 48,
+      "slack": 21,
+      "drag": 17,
+      "confidence": 55,
+      "score": 121,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "signal loss",
+      "signal": 51,
+      "slack": 46,
+      "drag": 10,
+      "confidence": 47,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "incident shape",
+      "signal": 65,
+      "slack": 36,
+      "drag": 29,
+      "confidence": 70,
+      "score": 149,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "span volume",
+      "signal": 79,
+      "slack": 53,
+      "drag": 27,
+      "confidence": 88,
+      "score": 218,
+      "lane": "ship"
+    }
+  ]
+}
