@@ -1,0 +1,17 @@
+{
+  "repo": "prism-trace-span-yard",
+  "thresholds": {
+    "signal": 4,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 5,
+    "ship": 181,
+    "watch": 118
+  },
+  "terms": [
+    "span volume",
+    "latency skew",
+    "signal loss",
+    "incident shape"
+  ]
+}
